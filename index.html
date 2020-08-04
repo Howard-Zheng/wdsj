@@ -1,0 +1,521 @@
+<!--<?php
+function get_device_type(){
+	$agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+	$type = 'other';
+	if(strpos($agent, 'iphone') || strpos($agent, 'ipad')){
+		$type = 'ios'; 
+	} 
+	if(strpos($agent, 'android')){
+		$type = 'android'; 
+	}
+	return $type; 
+}
+$url = "./m.php";
+if(get_device_type()=='ios'){
+	Header("Location: $url"); 
+} 
+if(get_device_type()=='android'){
+	Header("Location: $url"); 
+}
+?>-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script   language=javascript>
+		window.onselectstart=function()   {return   false;}
+		window.oncopy=function()   {return   false;}
+		</script>
+		<script>
+		function stop(){
+		return false;
+		}
+		document.oncontextmenu=stop;
+		</script>
+		<meta charset='utf-8' />
+		<title>WDSJ网址导航 - wdsj.pw</title>
+		<script src="./public/js/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" href="./public/bootstrap/css/bootstrap.css" />
+		<script src="./public/bootstrap/js/bootstrap.js"></script>
+		<meta name="title" content="WDSJ网址导航" />
+		<meta name="keywords" content="Minecraft,MC,我的世界,WDSJ,游戏,网址导航" />
+		<meta name="description" content="WDSJ网址导航(wdsj.pw)，收录了大量关于Minecraft《我的世界》的相关网站，可以快速地帮助您找到您所需要的网站。" />
+		<style type="text/css">
+		<!--
+		a:link {
+			text-decoration: none;
+		}
+		a:visited {
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+		a:active {
+			text-decoration: none;
+		}
+		body {
+			background: #000000 url(http://wx1.sinaimg.cn/large/006kXzk7gy1fgeq6kwhjoj31hc0xc7a7.jpg) no-repeat center 0; background-attachment:fixed;
+		}
+		-->
+		</style>
+	</head>
+	<body>
+	<div class="container">
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+				<span class="sr-only"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">
+				<img alt="icon" src="./favicon.ico">
+			  </a>
+			  <a class="navbar-brand" href="#">WDSJ网址导航</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+				<ul class="nav navbar-nav">
+					<li><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;收藏本站</a></li>
+					<li><a onclick="SetHome(window.location)" href="javascript:void(0)"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;设为首页</a></li>
+				  </ul>
+				<form action="https://www.baidu.com/s" method="get" class="navbar-form navbar-right" target="_blank">
+				<div class="form-group">
+				  <input type="text" class="form-control" name="wd" placeholder="搜索..." baiduSug="1">
+				</div>
+				<button type="submit" class="btn btn-default">百度搜索</button>
+			  </form>
+			</div>
+		  </div>
+		</nav>
+		<div class="page-header" style="background: url(http://wx3.sinaimg.cn/mw690/006kXzk7gy1ffapmw7xvaj301s01st8i.jpg) repeat;">
+		  <div style="float:left;"><h1>WDSJ网址导航<small>&nbsp;&nbsp;-&nbsp;&nbsp;http://wdsj.pw</small></h1></div>
+		  <div style="float:right"><br><iframe src="./weather.html" width="600" height="60" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div>
+		  <div style="clear:both"></div>
+		</div>
+		<div class="col-md-3">
+			<div class="thumbnail panel panel-default">
+			  <img alt="WDSJ游戏导航" src="./img/370x224.png" style="height: auto; width: 100%; display: block;">
+			  <div class="caption">
+				<h3>WDSJ游戏导航</h3>
+				<p>WDSJ网址导航(wdsj.pw)，收录了大量关于Minecraft《我的世界》相关网站，可以快速地帮助您找到您所需要的网站。</p><p>本网站不再维护手机版页面，手机端用户不再跳转至手机版页面。</p><p>这是一个开源项目，欢迎在GitHub上维护WDSJ网址导航:<a class="btn btn-default btn-xs" href="https://github.com/Howard-Zheng/wdsj" role="button">GitHub仓库</a></p>
+				<p><a onclick="AddFavorite(window.location,document.title)" class="btn btn-primary" href="javascript:void(0)"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>&nbsp;收藏本站</a>&nbsp;<a onclick="SetHome(window.location)" class="btn btn-primary" href="javascript:void(0)"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;设为首页</a></p>
+			  </div>
+			</div>
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=255 height=520 src="http://music.163.com/outchain/player?type=1&id=405493&auto=0&height=430"></iframe>
+			<div class="panel panel-default">
+				<div class="panel-heading">WDSJ游戏导航使用说明</div>
+				<div class="panel-body">
+					链接按钮颜色的意义<br><br>
+					<a class="btn btn-default btn-xs" href="#" role="button"></a><br>
+					空白按钮表示这个按钮还没有设置链接，不可以点击。<br><br>
+					<a class="btn btn-default btn-xs" href="#" role="button">白色普通按钮</a><br>
+					白色普通按钮表示这是普通的链接，可以点击。<br><br>
+					<a class="btn btn-danger btn-xs" href="#" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;红色火焰按钮</a><br>
+					红色火焰按钮表示这是一个热门的网站，可以点击。<br><br>
+					<a class="btn btn-info btn-xs" href="#" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;天蓝链接按钮</a><br>
+					天蓝链接按钮表示这个网站与本站互换了友情链接，可以点击。<br><br>
+					<a class="btn btn-success btn-xs" href="#" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;绿色地球按钮</a><br>
+					绿色地球按钮表示这个网站是一个官方网站，可以点击。<br><br>
+					<a class="btn btn-warning btn-xs" href="#" role="button"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span>&nbsp;黄色警告按钮</a><br>
+					黄色警告按钮表示这个网站的信息可能不真实，不保证这个网站的安全性，可以点击。<br><br>
+					<a class="btn btn-default btn-xs" href="#" role="button" disabled="disabled"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>&nbsp;灰色禁止按钮</a><br>
+					灰色禁止按钮表示这个网站可能暂时无法访问，不可以点击。<br><br>
+					<a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a><br>
+					绿色加号按钮可以告诉你怎样添加网址进入WDSJ游戏导航，可以点击。<br><br>
+					<a class="btn btn-primary btn-xs" href="#" role="button">更多>>></a><br>
+					深蓝更多按钮可以在搜索引擎上找到更多相关网站的内容，可以点击。<br><br>
+				</div>
+			</div>
+			<!--<div class="thumbnail panel panel-default">
+			  <img alt="" src="" style="height: auto; width: 100%; display: block;">
+			  <div class="caption">
+				<h3></h3>
+				<p></p>
+				<p><a href="" class="btn btn-primary" role="button">打开</a></p>
+			  </div>
+			</div>-->
+		</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+			<div class="panel-heading">常用网站</div>
+			<div class="panel-body">
+				<ul id="myTabs" class="nav nav-tabs" role="tablist">
+				  <li role="presentation" class="active"><a href="#baidu" id="home-tab" role="tab" data-toggle="tab" aria-controls="baidu" aria-expanded="true">百度</a></li>
+				  <li role="presentation" class=""><a href="#360" role="tab" id="profile-tab" data-toggle="tab" aria-controls="360" aria-expanded="false">360</a></li>
+				  <li role="presentation" class=""><a href="#sogou" role="tab" id="profile-tab" data-toggle="tab" aria-controls="sogou" aria-expanded="false">搜狗</a></li>
+				  <li role="presentation" class=""><a href="http://www.dbb.pw/" id="profile-tab">更多>>></a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+				  <div role="tabpanel" class="tab-pane fade active in" id="baidu" aria-labelledby="home-tab"><br>
+					<div class="col-md-0"></div>
+					  <div class="col-md-2"><img width="auto" height="34px" src="./img/baidu.png" alt="Baidu" align="left" border="0"></div>
+						<form action="https://www.baidu.com/s" method="get" target="_blank">
+							<div class="col-md-8"><div class="panel"><input type="text" class="form-control" onfocus="checkHttps" name="wd"  size="30" placeholder="百度搜索..." baiduSug="1"></div></div>
+							<input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #3385ff;
+							border-bottom: 1px solid #2d78f4;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+							value="百度搜索">
+						</form>
+				  </div>
+
+				  <div role="tabpanel" class="tab-pane fade" id="360" aria-labelledby="profile-tab"><br>
+					<div class="col-md-0"></div>
+					  <div class="col-md-2"><img width="auto" height="34px" src="./img/360.png" alt="360" align="left" border="0"></div>
+						<form action="https://www.so.com/s" method="get" target="_blank">
+							<div class="col-md-8"><div class="panel"><input type="text" class="form-control" onfocus="checkHttps" name="q"  size="30" placeholder="360搜索..." baiduSug="1"></div></div>
+							<input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #19b955;
+							border-bottom: 1px solid #fff;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+							value="搜一下">
+						</form>
+				  </div>
+
+				  <div role="tabpanel" class="tab-pane fade" id="sogou" aria-labelledby="profile-tab"><br>
+					  <div class="col-md-2"><img width="auto" height="34px" src="./img/sogou.png" alt="sogou" align="left" border="0"></div>
+						<form action="https://www.sogou.com/web" method="get" target="_blank">
+							<div class="col-md-8"><div class="panel"><input type="text" class="form-control" onfocus="checkHttps" name="query"  size="30" placeholder="搜狗搜索..." baiduSug="1"></div></div>
+							<input type="submit" class="btn btn-default input-group-addon" style="
+							width: 100px;
+							height: 34px;
+							color: #fff;
+							letter-spacing: 1px;
+							background: #fd6853;
+							border-bottom: 1px solid #fff;
+							outline: medium;
+							-webkit-appearance: none;
+							-webkit-border-radius: 0;"
+							value="搜狗搜索">
+						</form>
+				  </div>
+				  </div>
+				</div>
+				<br>
+
+				<table class="table table-striped">
+				  <thead>
+					<tr>
+					  <th></th>
+					  <th></th>
+					  <th></th>
+					  <th></th>
+					  <th></th>
+					  <th></th>
+					  <th></th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="https://www.baidu.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;百度</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.sina.com.cn/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;新浪</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://weibo.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;微博</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.sohu.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;搜狐</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.qq.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;腾讯</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.ifeng.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;凤凰</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.163.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;网易</a></td>
+					</tr>
+				  </tbody>
+				</table>
+				<div class="panel-footer">
+				<div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div>
+				<div align=right><a class="btn btn-primary btn-xs" href="#" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			<div class="panel-heading">MC官网</div>
+				<table class="table table-striped">
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-success btn-xs" href="https://minecraft.net/" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Minecraft官网</a></td>
+					  <td><a class="btn btn-success btn-xs" href="http://mc.163.com/" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;我的世界中国版</a></td>
+					  <td><a class="btn btn-success btn-xs" href="https://www.mojang.com/" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Mojang</a></td>
+					</tr>
+				  </tbody>
+				</table>
+				<div class="panel-footer">
+				<div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div>
+				<div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=Minecraft我的世界" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			<div class="panel-heading">游戏门户</div>
+				<table class="table table-striped">
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.ptbus.com/wdsj/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;口袋巴士</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.18183.com/minecraft/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;18183我的世界专区</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://mc.tgbus.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;电玩巴士</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://mc.duowan.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;多玩游戏网</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.yxdown.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;游迅网</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.ali213.net/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;游侠网</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.pcgames.com.cn/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;太平洋游戏网</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.52pk.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;52PK</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.gamersky.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;游民星空</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.3dmgame.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;3DMGAME</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.17173.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;17173</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://games.sina.com.cn/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;新浪游戏</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.doyo.cn/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;逗游网</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.yzz.cn/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;叶子猪游戏网</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.uuu9.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;游久网</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.gamedog.cn/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;游戏狗手游网</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://games.qq.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;腾讯游戏频道</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-default btn-xs" href="http://www.minecraftxz.com/" role="button">Minecraft中文下载站</a></td>
+					  <td><a class="btn btn-default btn-xs" href="http://www.secretmine.net/" role="button">我的世界中文分享站</a></td>
+					  <td><a class="btn btn-default btn-xs" href="http://mcfuzhu.net/" role="button">MC服主网</a></td>
+					  <td><a class="btn btn-default btn-xs" href="http://www.duotegame.com/" role="button">多特单机游戏</a></td>
+					</tr>
+				  </tbody>
+				</table>
+				<div class="panel-footer">
+				<div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div>
+				<div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=Minecraft我的世界" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			<div class="panel-heading">MC论坛</div>
+				<table class="table table-striped">
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-success btn-xs" href="http://www.minecraftforum.net/" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;Minecraft Forum</a></td>
+					  <td><a class="btn btn-success btn-xs" href="https://mc.netease.com/" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;网易我的世界论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://bukkit.org/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;Bukkit论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://www.spigotmc.org/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;Spigot</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://www.planetminecraft.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;Planet Minecraft</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.mcbbs.net/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;我的世界中文论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.mckuai.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;麦块论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.zuimc.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;最MC论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://buluo.qq.com/p/barindex.html?bid=12347" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;Minecraft兴趣部落</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://buluo.qq.com/p/barindex.html?bid=13623" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;我的世界兴趣部落</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="https://tieba.baidu.com/f?kw=minecraft" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;Minecraft吧</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://tieba.baidu.com/f?kw=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;我的世界吧</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://tieba.baidu.com/f?kw=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8Cpe" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;我的世界pe吧</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://tieba.baidu.com/f?kw=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%89%8B%E6%9C%BA%E7%89%88" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;我的世界手机版吧</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://tieba.baidu.com/f?kw=%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%81%94%E6%9C%BA" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;我的世界联机吧</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://bbs.duowan.com/forum-2451-1.html" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;多玩游戏论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://bbs.17173.com/forum-9944-1.html" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;17173游戏论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://bbs.houdao.com/f999" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;猴岛游戏论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://game.ali213.net/forum-757-1.html" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;游侠NETSHOW论坛</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.52fzba.com/forum-129-1.html" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;我爱辅助游戏论坛</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-default btn-xs" href="https://forum.minecraft-hk.com/" role="button">我的世界香港社区</a></td>
+					  <td><a class="btn btn-default btn-xs" href="https://forum.mcpe.tw/" role="button">MinecraftPE-TW论坛</a></td>
+				</table>
+				<div class="panel-footer">
+				<div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div>
+				<div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=Minecraft我的世界论坛" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			<div class="panel-heading">MC百科</div>
+				<table class="table table-striped">
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://minecraft-zh.gamepedia.com/Minecraft_Wiki" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;中文Minecraft Wiki</a></td>
+					  <td><a class="btn btn-default btn-xs" href="http://www.mcmod.cn/" role="button">MineCraft中文模组百科</a></td>
+					  <td><a class="btn btn-default btn-xs" href="http://mineplugin.org/" role="button">Minecraft插件百科</a></td>
+					</tr>
+				  </tbody>
+				</table>
+				<div class="panel-footer">
+				<div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div>
+				<div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=Minecraft我的世界百科" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			<div class="panel-heading">游戏视频</div>
+				<table class="table table-striped">
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://game.youku.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;优酷游戏频道</a></td>
+					  <td><a class="btn btn-default btn-xs" href="#" role="button" disabled="disabled"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>&nbsp;爱拍原创</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://v.qq.com/games/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;腾讯视频游戏频道</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://games.iqiyi.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;爱奇艺游戏频道</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://tv.sohu.com/ugc/game/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;搜狐游戏频道</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://v.baidu.com/gameindex/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;百度视频游戏频道</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://game.tudou.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;土豆游戏</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://games.ku6.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;酷6网游戏频道</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://game.pptv.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;PPTV聚力游戏频道</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://games.le.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;乐视游戏频道</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.bilibili.com/video/game.html" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;哔哩哔哩游戏视频</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://17173.tv.sohu.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;173游戏网</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://v.pcgames.com.cn/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;太平洋游戏网视频站</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://games.sina.com.cn/video/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;新浪游戏视频</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://v.3dmgame.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;3DMGAME游戏视频</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://v.17173.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;17173游戏视频</a></td>
+					</tr>
+				  </tbody>
+				</table>
+				<div class="panel-footer">
+				<div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div>
+				<div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=Minecraft我的世界视频" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			<div class="panel-heading">游戏直播</div>
+				<table class="table table-striped">
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.huya.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;虎牙直播</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://longzhu.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;龙珠直播</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="https://www.douyu.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;斗鱼直播</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.panda.tv/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;熊猫直播</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="http://www.zhanqi.tv/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;战旗直播</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="http://live.bilibili.com/" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;哔哩哔哩直播</a></td>
+					</tr>
+				  </tbody>
+				</table>
+				<div class="panel-footer">
+				<div style="float:left"><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div>
+				<div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=Minecraft我的世界直播" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			  <div class="panel-heading">视频介绍</div>
+					<div align="middle">
+						<video class="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);" width="820" height="auto" src="https://nie.v.netease.com/nie/2017/0830/64a1a3ae100f830b48c134d702f0d3a0qt.mp4" poster="https://mc.res.netease.com/pc/boot/20170915110504/fab/img/poster_60cab13.jpg" controls="controls" loop=""></video>
+					</div>
+			  <div class="panel-footer"><div align=right><a class="btn btn-primary btn-xs" href="http://mc.163.com/" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-default">
+			  <div class="panel-heading">合成配方（请允许启用Adobe Flash Player）</div>
+					<div align="middle">
+						<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="600" height="800">
+						  <param name="movie" value="./craft.swf">
+						  <param name="quality" value="high">
+						  <embed src="./craft.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="820" height="1000">
+						</object>
+					</div>
+			  <div class="panel-footer"><div align=right><a class="btn btn-primary btn-xs" href="https://www.baidu.com/s?wd=Minecraft我的世界合成表" role="button">更多>>></a></div></div>
+			</div>
+			<div class="panel panel-info">
+			<div class="panel-heading">友情链接</div>
+				<table class="table table-striped">
+				  <tbody>
+					<tr>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					</tr>
+				  </tbody>
+				</table>
+				<div class="panel-footer">
+				<div align=right><a tabindex="0" class="btn btn-xs btn-success" role="button" data-toggle="modal" data-target=".bs-example-modal-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;添加</a></div></div>
+			</div>
+		</div>
+	</div>
+	<div align=middle><font color=#fff><hr>本站收录的网站排名不分先后，如果无意之中侵犯了您的利益，请告知管理员。<br>若在本页面发现有链接失效、链接跳转错误等情况，请联系网站管理员。<br>这是一个开源项目，欢迎在GitHub上维护WDSJ网址导航:<a class="btn btn-default btn-xs" href="https://github.com/Howard-Zheng/wdsj" role="button">GitHub仓库</a><br>Copyright 2017&nbsp;-&nbsp;
+	<script type="text/javascript">var d = new Date(); var y = d.getFullYear();	document.write(y);</script> by wdsj.pw	&nbsp;<br></font>
+	<img src="data:image/gif;base64,R0lGODlhEAAQAIAAAJnM/wAAACH5BAAAAAAALAAAAAAQABAAQAIojI9pwO2+gAovskllflxf1ERimHxdZ53kp0BZe5mqK2tHzYLeTGJTAQA7"/>
+	<img src="./favicon.ico"/><br><br>
+	<div align=left><script src="https://s19.cnzz.com/z_stat.php?id=1262169834&web_id=1262169834" language="JavaScript"></script></div><br>
+	<br></div>
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">提交网址</h4>
+		  </div>
+		  <div class="modal-body">
+			提交网址给WDSJ游戏导航方法：<br>
+			发现了一个好的网站，希望WDSJ游戏导航可以收录？<br>
+			<br>
+			WDSJ游戏导航收录条件：<br>
+			一、您的网站不能出现以下内容：<br>
+			<br>
+			（一）违反宪法或法律法规规定的；<br>
+			（二）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；<br>
+			（三）损害国家荣誉和利益的，损害公共利益的；<br>
+			（四）煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+			（五）破坏国家宗教政策，宣扬邪教和封建迷信的；<br>
+			（六）散布谣言，扰乱社会秩序，破坏社会稳定的；<br>
+			（七）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；<br>
+			（八）侮辱或者诽谤他人，侵害他人合法权益的；<br>
+			（九）含有法律、行政法规禁止的其他内容的。<br>
+			<br>
+			二、您的网站是应该是健康的，不能出现不良内容。<br>
+			三、您的网站需要经常更新内容。<br>
+			四、您的网站的内容应该是原创的。<br>
+			五、您的网站内的广告不能过多。<br>
+			<br>
+			若您的网站可以满足以上条件，请联系管理员，把您的网站网址、简介发到的管理员邮箱。<br>
+			<br>
+			收录后若您的网站发生改动导致不符合收录条件，我们会取消对您的网站的收录。<br>
+			我们可以随时撤销对您的网站的收录。<br>
+			<hr>
+			若在本页面发现有链接失效、链接跳转错误等情况，请联系管理员。<br>
+			本站收录的网站排名不分先后，如果无意之中侵犯了贵站的利益，请联系管理员。<br>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			<a class="btn btn-primary" href="https://github.com/Howard-Zheng/wdsj" role="button">GitHub仓库</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	</body>
+</html>
+
+<!-- 
+					<tr>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					  <td><a class="btn btn-default btn-xs" href="" role="button"></a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-danger btn-xs" href="" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-danger btn-xs" href="" role="button"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span>&nbsp;</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-success btn-xs" href="" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-success btn-xs" href="" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-success btn-xs" href="" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-success btn-xs" href="" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-success btn-xs" href="" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;</a></td>
+					</tr>
+					<tr>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					  <td><a class="btn btn-info btn-xs" href="" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;</a></td>
+					</tr>
+-->
